@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yuna — Press to Start</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div style="min-height:100vh; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f12,#222029);">
+    <div style="text-align:center; color:#efe7ff;">
+      <h1 style="font-family:Pacifico, cursive; font-size:2.4rem; margin-bottom:8px;">Yuna</h1>
+      <p style="opacity:0.9; margin-bottom:24px;">Clique para começar — a música vai tocar</p>
+      <button id="startBtn" class="btn-dark" style="padding:16px 28px; font-size:1.1rem;">Clique para começar</button>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('startBtn');
+    btn.addEventListener('click', function(){
+      // marca para a página principal tocar a música
+      try{ localStorage.setItem('yuna_play_music','1'); }catch(e){}
+      // redireciona para a página principal
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
